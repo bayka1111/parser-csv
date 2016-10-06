@@ -1,13 +1,13 @@
 ﻿// window._parser_csv
 ;(function (){
-"use scrict"	
+	"use scrict"	
 
 function ParserCSV (formElem){
 	this.formElem = formElem; 
 }
 
 function consoleArr(arr, str){
-	// выводим в консоль то что распарсии
+	// выводим в консоль то что распарсили
 	console.log("		arr length = " + arr.length);
 	for (var i = 0; i < arr.length; i++){
 		if (str[i] != "" && str[i] != undefined){
@@ -162,13 +162,13 @@ ParserCSV.prototype.pars = function (){
 							csvStr[i] = csvArr[i].slice(0, -1).slice(1).split("\",\"");
 						}
 					}
-					// выводим в консоль то что распарсии
+					// выводим в консоль то что распарсили
 					// consoleArr(csvArr, csvStr);
 
 						$.ajax({ //конфигурация запроса на ajax
 							url:"/data/prise.csv" // конвертер для xls https://convertio.co/ru/xls-csv/
 							}).success(function (data){ // получячаем ответ
-								// парсим цсв который эксель
+								// парсим цсв (прайс в экселе)
 								var re = /\n/;
 								xlsArr = data.split(re);
 								for (var i = 0; i < xlsArr.length; i++){
